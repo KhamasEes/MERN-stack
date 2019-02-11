@@ -1,0 +1,148 @@
+.remove-btn {
+    margin-right: 5 rem;
+}
+
+.fade-enter {
+ opacity: 0.01;
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 1000ms ease-in;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit.active {
+    opacity: 0.01;
+    transition: opacity 1000ms ease-in;
+}
+
+.PersonList {
+    background-color: #fed;
+}
+
+.person {
+    background-color: #def;
+}
+
+.ShoppingList {
+    background-color: #dfe;
+}
+
+.esine {
+    background-color: #fdd;
+}
+
+body {
+    background-color: #fdc;
+}
+
+.ModalHeader {
+    background-color: #efe;
+}
+
+.ModalBody {
+    background-color: #efd;
+}
+
+
+
+Label {
+    background-color: #fdd;
+}
+
+.ModalFormInput {
+    background-color: #def;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #777;
+    padding: 10px;
+    grid-gap: 10px 15px;
+    
+    justify-content: center;
+}
+
+.grid-item {
+    background-color: #753;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+ 
+}
+
+.item1 {
+
+    background-color: #f44;
+}
+
+#item1 {
+    grid-column: 2/span 2;
+    /* grid-column-start: 1;
+    grid-column-end: 3; */
+    background-color: #775;
+}
+
+#grid-item2 {
+    /* grid-row-start: 1; */
+    grid-row: 1/3;
+    /* grid-column-start: 1;
+    grid-column-end: 3;
+     */
+    background-color: #757;
+}
+
+#grid-item3 {
+    /* grid-row-start: 1;
+    grid-row-end: 3; */
+    background-color: #577;
+}
+
+#grid-item4 {
+    /* grid-row-start: 1;
+    grid-row-end: 3; */
+    background-color: #575;
+}
+
+#grid-item5 {
+    /* grid-row-start: 1;
+    grid-row-end: 3; */
+    background-color: #357;
+}
+
+#grid-item6 {
+    /* grid-row-start: 1;
+    grid-row-end: 3; */
+    background-color: #375;
+}
+
+#grid-item7 {
+
+    grid-column-start: 3;
+    grid-column-end: 5;
+
+    grid-row-start: 2;
+    grid-row-end: 4;
+    background-color: #537;
+}
+
+#grid-item8 {
+    /* grid-row-start: 1;
+    grid-row-end: 3; */
+    background-color: #573;
+}
+
+#grid-item9 {
+    grid-row-start: -1;
+    grid-row-end: -2;
+
+    grid-column-start: -1;
+    grid-column-end: -3;
+
+    background-color: #735;
+}

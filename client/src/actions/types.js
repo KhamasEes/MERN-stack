@@ -1,0 +1,9 @@
+export const GET_ESINEET = 'GET_ESINEET';
+export const ADD_ESINE = 'ADD_ESINE';
+export const DELETE_ESINE = 'DELETE_ESINE';
+export const ESINEET_LATAUTUU= 'ESINEET_LATAUTUU';
+
+export const GET_PERSONS = 'GET_PERSONS';
+export const ADD_PERSON = 'ADD_PERSON';
+export const DELETE_PERSON = 'DELETE_PERSON';
+export const PERSONS_LOADING = 'PERSONS_LOADING';
