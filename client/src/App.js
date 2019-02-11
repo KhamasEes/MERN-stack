@@ -19,27 +19,28 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <AppNavbar />
-          <Container className="PersonList">  
-            <PersonModal />
-            <PersonList />
-          </Container>
-          <hr style={{ margin: '1rem', backgroundColor: 'black' }} />
-          <Container className="ShoppingList">
-            <EsineModal />
-            <ShoppingList />
-          </Container>
-          <Container className="ShoppingList">
-            <EsineModal />
-            <ShoppingList />
-          </Container>
-          <Container className="ShoppingList">
-            <EsineModal />
-            <ShoppingList />
-          </Container>
-          <Container className="ShoppingList">
-            <EsineModal />
-            <ShoppingList />
-          </Container>
+          <div className="list-container">
+            <Container className="PersonList">  
+              <PersonModal />
+              <PersonList />
+            </Container>
+            <Container className="ShoppingList">
+              <EsineModal />
+              <ShoppingList />
+            </Container>
+            <Container className="ShoppingList">
+              <EsineModal />
+              <ShoppingList />
+            </Container>
+            <Container className="ShoppingList">
+              <EsineModal />
+              <ShoppingList />
+            </Container>
+            <Container className="ShoppingList">
+              <EsineModal />
+              <ShoppingList />
+            </Container>
+          </div>
         </div>
       </Provider>
     );

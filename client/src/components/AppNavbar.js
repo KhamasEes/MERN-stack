@@ -36,40 +36,40 @@ class AppNavbar extends Component {
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="grid-container ml-auto" navbar>
  
-                                <NavItem  className="grid-item" id="item1">
-                                    <NavLink href="https://github.com/KhamasEes"> GitHab </NavLink>
+                                <NavItem  className="grid-top" id="grid-item1">
+                                    <NavLink href="https://github.com/KhamasEes"> GitHab 1</NavLink>
                                 </NavItem>
 
-                                <NavItem className="grid-item" id="grid-item2">
-                                    <NavLink href="https://github.com/KhamasEes" > GitHeb </NavLink>
+                                <NavItem className="grid-left" id="grid-item2">
+                                    <NavLink href="https://github.com/KhamasEes" > GitHeb 2</NavLink>
                                 </NavItem>
 
-                                <NavItem className="grid-item" id="grid-item3">
-                                    <NavLink href="https://github.com/KhamasEes" > GitHib </NavLink>
+                                <NavItem className="grid-right" id="grid-item3">
+                                    <NavLink href="https://github.com/KhamasEes" > GitHib 3</NavLink>
                                 </NavItem>
 
                                 <NavItem  className="grid-item" id="grid-item4">
-                                    <NavLink href="https://github.com/KhamasEes"> GitHob </NavLink>
+                                    <NavLink href="https://github.com/KhamasEes"> GitHob 4</NavLink>
                                 </NavItem>
 
                                 <NavItem className="grid-item" id="grid-item5">
-                                    <NavLink href="https://github.com/KhamasEes" > GitHub </NavLink>
+                                    <NavLink href="https://github.com/KhamasEes" > GitHub 5</NavLink>
                                 </NavItem>
 
                                 <NavItem className="grid-item" id="grid-item6">
-                                    <NavLink href="https://github.com/KhamasEes" > GitHyb </NavLink>
+                                    <NavLink href="https://github.com/KhamasEes" > GitHyb 6</NavLink>
                                 </NavItem>
 
                                 <NavItem  className="grid-item" id="grid-item7">
-                                    <NavLink href="https://github.com/KhamasEes"> GitHåb </NavLink>
+                                    <NavLink href="https://github.com/KhamasEes"> GitHåb 7</NavLink>
                                 </NavItem>
 
                                 <NavItem  className="grid-item" id="grid-item8">
-                                    <NavLink href="https://github.com/KhamasEes"> GitHäb </NavLink>
+                                    <NavLink href="https://github.com/KhamasEes"> GitHäb 8</NavLink>
                                 </NavItem>
 
-                                <NavItem  className="grid-item" id="grid-item9">
-                                    <NavLink href="https://github.com/KhamasEes"> GitHöb </NavLink>
+                                <NavItem  className="grid-bottom" id="grid-item9">
+                                    <NavLink href="https://github.com/KhamasEes"> GitHöb 9</NavLink>
                                 </NavItem> 
                                                     
                             </Nav>
@@ -83,4 +83,3 @@ class AppNavbar extends Component {
 }
 
 export default AppNavbar;
-
