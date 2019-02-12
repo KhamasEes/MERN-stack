@@ -86,95 +86,152 @@ Label {
     background-color: #dfe;
 }
 
+.grid-wrapper {
+    display: grid;
+    /* grid-template-columns: repeat(3, 2fr); */
+    
+    grid-template-columns: 10rem 1fr 10rem; 
+   
+    /* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));  */
+    
+    /* grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)) ;  */
+    
+
+    background-color: #777;
+    padding: 10px;
+    /* grid-gap: 10px 15px; */
+    grid-auto-flow: dense;
+    width: 100%;
+    height: 100%;
+
+    margin: 1rem;
+
+    grid-template-areas: 
+        "grid-top grid-top grid-top"
+        "grid-left grid-container grid-right"
+        "grid-bottom grid-bottom grid-bottom";
+
+        /* justify-content: center;  */
+
+    /* min-width: 0;
+    min-height: 0; */
+}
+
+.grid-left {
+    /* display: block; */
+    width: 100%;
+    background-color: #757;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    align-content: end;
+    grid-area: grid-left;
+    align-content: start;
+    grid-row: 2/-1;
+    grid-column-start: 1;
+    margin: 0.5rem;
+    margin-right: 1rem;
+    
+} 
+
+.grid-right {
+    /* display: block; */
+    width: 100%;
+    background-color: #577;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    grid-area: grid-right;
+    align-content: end;
+    grid-row: 2/-1;
+    grid-column-start: 3;
+    margin: 0.5rem;
+       
+} 
+
+.grid-top {
+    display: block;
+    width: 100%;
+    background-color: #775;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    grid-area: grid-top;
+    justify-content: start;
+    grid-row-start: 1;
+    grid-column: 1/-1;
+    margin: 0.5rem;
+       
+} 
+
+.grid-bottom {
+    display: block;
+    width: 100%;
+    background-color: #735;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    text-align: center;
+    grid-area: grid-bottom;
+    justify-content: end;
+    grid-row-start: -1;
+    grid-column: 1/-1;
+    margin: 0.5rem;
+       
+} 
+
+
 .grid-container {
     display: grid;
     /* grid-template-columns: repeat(3, 2fr); */
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
     
-    grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)) ;
+    /* grid-template-rows: repeat(auto-fill, minmax(100px, 1fr)) ; */
     
+    /* grid-template-rows: 1fr; */
+
+    grid-area: grid-container;
 
     background-color: #777;
-    padding: 10px;
-    grid-gap: 10px 15px;
+    padding: 5px;
+    grid-gap: 1rem 0.1rem;
     grid-auto-flow: dense;
     width: 100%;
-    height: 100%;
+ 
+    /* height: 100%; */
 
-    grid-template-areas: 
-        "grid-top grid-top grid-top"
-        "grid-left grid-item grid-right"
-        "grid-bottom grid-bottom grid-bottom";
+    /* grid-template-areas: 
+        ". . ."; */
 
-        justify-content: center; 
+        /* justify-content: center;  */
 
     /* min-width: 0;
     min-height: 0; */
-
-
-
 }
 
-.grid-item,
-.grid-top, 
-.grid-left, 
-.grid-right, 
-.grid-bottom,
-.grid-item4,
-.grid-item5,
-.grid-item6,
-.grid-item7,
-.grid-item8  {
+
+
+
+.grid-item {
     display: block;
-    width: 100%;
+    width: 1fr;
+    height: 100px;
     background-color: #753;
     border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
+    /* padding: 20px; */
     text-align: center;
+
+    /* grid-area: grid-item; */
        
 } 
 
-/* .grid-top .grid-item {
-    grid-area: grid-top;
+.navbrand {
+    background-color: #222;
+    
 }
 
-.grid-bottom grid-item {
-    grid-area: grid-bottom;
-}
-
-.grid-left grid-item {
-    grid-area: grid-left;
-}
-
-.grid-right grid-item {
-    grid-area: grid-right;
-} */
 
 
-#grid-item1 {
 
-
-    background-color: #775;
-    grid-row-start: 1;
-    grid-column: 1/-1;
-}
-
-#grid-item2 {
-
-
-    grid-row: 2/-1;
-    grid-column-start: 1;
-
-    background-color: #757;
-}
-
-#grid-item3 {
-
-    grid-row: 2/-1;
-    grid-column-start: -1;
-
-    background-color: #577;
-}
 
 #grid-item4 {
     background-color: #575;
@@ -203,10 +260,3 @@ Label {
     background-color: #573;
 }
 
-#grid-item9 {
-
-    grid-row-start: -1;
-    grid-column: 1/-1;
-
-    background-color: #735;
-}
