@@ -59,7 +59,7 @@ Label {
 
 .NavbarBrand {
     background-color: #222;
-    text-align: left;
+
 }
 
 .list-container {
@@ -71,7 +71,9 @@ Label {
     padding: 10px;
     grid-gap: 10px 15px;
     grid-auto-flow: dense;
-    width: 100%
+    width: 100%;
+
+
 
     /* justify-content: center; */
 }
@@ -85,6 +87,11 @@ Label {
     width: 100%;
     background-color: #dfe;
 }
+
+/*************************
+ * 800px, 1000px, 1200px *
+ *************************/
+
 
 .grid-wrapper {
     display: grid;
@@ -107,6 +114,8 @@ Label {
     /* margin: 1rem; */
     padding: 1rem;
 
+
+    
     grid-template-areas: 
         "grid-top grid-top grid-top"
         "grid-left grid-container grid-right"
@@ -120,7 +129,7 @@ Label {
 
 .grid-left {
     /* display: block; */
-    width: 100%;
+
     background-color: #757;
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
@@ -128,16 +137,19 @@ Label {
     align-content: end;
     grid-area: grid-left;
     align-content: start;
+
     grid-row: 2/-1;
     grid-column-start: 1;
-    margin: 0.5rem;
-
+    margin-right: 0.5rem;
+/* 
+    margin-left: auto;
+    margin-right: auto; */
     
 } 
 
 .grid-right {
     /* display: block; */
-    width: 100%;
+
     background-color: #577;
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
@@ -146,8 +158,8 @@ Label {
     align-content: end;
     grid-row: 2/-1;
     grid-column-start: 3;
-    margin: 0.5rem;
-       
+    /* margin: 0.5rem; */
+    margin-left: 0.5rem;
 } 
 
 .grid-top {
@@ -156,12 +168,13 @@ Label {
     background-color: #775;
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
-    text-align: center;
     grid-area: grid-top;
+    text-align: center;
+    align-content: center;
     justify-content: start;
     grid-row-start: 1;
     grid-column: 1/-1;
-    margin: 0.5rem;
+    margin-bottom: 0.5rem;
        
 } 
 
@@ -176,7 +189,7 @@ Label {
     justify-content: end;
     grid-row-start: -1;
     grid-column: 1/-1;
-    margin: 0.5rem;
+    margin-top: 0.5rem;
        
 } 
 
@@ -192,13 +205,15 @@ Label {
 
     grid-area: grid-container;
 
-    background-color: #777;
+    background-color: #99f;
     /* margin: 1rem; */
-    padding: 5px;
-    grid-gap: 1rem 0.1rem;
+    grid-gap: 0.1rem;
+
     grid-auto-flow: dense;
     width: 100%;
  
+
+
     /* height: 100%; */
 
     /* grid-template-areas: 
@@ -214,17 +229,19 @@ Label {
 
 
 .grid-item {
-    display: block;
+    display: grid;
     width: 1fr;
     height: 100px;
     background-color: #753;
     border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 5x;
+    /* padding: 5px; */
     text-align: center;
-    margin: 0.1rem;
-
+    justify-content: center;
+    align-content: center;
+    /* margin: 0.1rem; */
+    
     /* grid-area: grid-item; */
-       
+    
 } 
 
 .navbrand {
