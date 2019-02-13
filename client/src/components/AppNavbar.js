@@ -34,10 +34,11 @@ class AppNavbar extends Component {
                         <NavbarBrand href="/" className="navbrand">Listoja ja kaikkea</NavbarBrand>
                         <NavbarToggler onClick={this.toggle} />
                         <Collapse isOpen={this.state.isOpen} navbar>
+
+
                             <Nav className="grid-wrapper ml-auto" navbar>
- 
                                 <NavItem  className="grid-top" id="grid-item1">
-                                    <NavLink href="https://github.com/KhamasEes"> GitHab 1</NavLink>
+                                                                                                                                                                     <NavLink href="https://github.com/KhamasEes"> GitHab 1</NavLink>
                                 </NavItem>
 
                                 <NavItem className="grid-left" id="grid-item2">
@@ -51,7 +52,9 @@ class AppNavbar extends Component {
                                 <NavItem  className="grid-bottom" id="grid-item9">
                                     <NavLink href="https://github.com/KhamasEes"> GitHöb 9</NavLink>
                                 </NavItem> 
-                                             
+                
+
+                                            
                                 <Nav className="grid-container ml-auto" navbar>
 
                                     <NavItem  className="grid-item" id="grid-item4">
@@ -270,9 +273,8 @@ class AppNavbar extends Component {
                                         <NavLink href="https://github.com/KhamasEes"> GitHäb 58</NavLink>
                                     </NavItem>                    
                                 </Nav>
-
+                             
                             </Nav>
-
                         </Collapse>
                     </Container>
                 </Navbar>
