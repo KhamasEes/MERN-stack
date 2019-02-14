@@ -92,8 +92,7 @@ Label {
  * 800px, 1000px, 1200px *
  *************************/
 
-
-.grid-wrapper {
+ .grid-wrapper{
     display: grid;
     background-color: #777;
     padding: 10px;
@@ -101,38 +100,20 @@ Label {
     width: 100%;
     /* height: 100%; */
     padding: 1rem;
-    grid-template-rows: 1fr;
-    grid-template-areas:
-        "grid-top"
-        "grid-container"
-        "grid-botom";
+    grid-template-columns: 10rem 1fr 10rem; 
+    grid-template-areas: 
+        "grid-top grid-top grid-top"
+        "grid-left grid-container grid-right"
+        "grid-bottom grid-bottom grid-bottom";
 }
 
-@media screen and (min-width: 800x) {
-    .grid-wrapper{
-        grid-template-rows: 10rem 1fr;
-        grid-template-areas:
-            "grid-top grid-top"
-            "grid-left grid-container";
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    .grid-wrapper{
-        grid-template-columns: 10rem 1fr 10rem; 
-        grid-template-areas: 
-            "grid-top grid-top grid-top"
-            "grid-left grid-container grid-right"
-            "grid-bottom grid-bottom grid-bottom";
-    }
-
-}
 
 
 
 
 
 .grid-left {
+    /* display: none !important; */
     display: block;
     background-color: #757;
     border: 1px solid rgba(0, 0, 0, 0.8);
@@ -150,6 +131,7 @@ Label {
 
 .grid-right {
     display: block;
+    /* display: none !important; */
     background-color: #577;
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 20px;
@@ -238,3 +220,51 @@ Label {
     background-color: #573;
 }
 
+
+@media (max-width: 1000x) {
+    .grid-wrapper{
+        grid-template-rows: 10rem 1fr;
+        grid-template-areas:
+            "grid-top grid-top"
+            "grid-left grid-container";
+    }
+    .grid-right{
+        display: none !important;
+    }
+}
+
+
+
+
+ @media (max-width: 800x) {
+    .grid-wrapper  {
+
+        grid-template-rows: 1fr;
+        grid-template-areas:
+            "grid-top"
+            "grid-container"
+            "grid-botom";
+    }
+    .grid-right{
+        display: none !important;
+    }
+
+    .grid-left{
+        display: none !important;
+    }
+ }
+
+
+
+ /* @media (min-width: 1001x) {
+    .grid-wrapper{
+    grid-template-columns: 10rem 1fr 10rem; 
+    grid-template-areas: 
+        "grid-top grid-top grid-top"
+        "grid-left grid-container grid-right"
+        "grid-bottom grid-bottom grid-bottom";
+    }
+    .grid-right{
+        display: block !important;
+    }
+} */
