@@ -9,6 +9,9 @@ import {
     NavLink,
     Container
 } from 'reactstrap'; // from Reactstrapistä listää https://reactstrap.github.io/components/alerts/
+import RegisterModal from './auth/RegisterModal';
+import Logout from './auth/Logout';
+
 
 class AppNavbar extends Component {
 
@@ -58,18 +61,22 @@ class AppNavbar extends Component {
                                 <Nav className="grid-container ml-auto" navbar>
 
                                     <NavItem  className="grid-item" id="grid-item4">
-                                        <NavLink href="https://github.com/KhamasEes"> GitHob 4</NavLink>
+                                        <RegisterModal />
                                     </NavItem>
 
+                                    <NavItem className="grid-item" id="grid-item5" >
+                                        <Logout />
+                                    </NavItem>
+{/* 
                                     <NavItem className="grid-item" id="grid-item5">
                                         <NavLink href="https://github.com/KhamasEes" > GitHub 5</NavLink>
                                     </NavItem>
 
                                     <NavItem className="grid-item" id="grid-item6">
                                         <NavLink href="https://github.com/KhamasEes" > GitHyb 6</NavLink>
-                                    </NavItem>
+                                    </NavItem> */}
 
-                                    <NavItem  className="grid-item" id="grid-item7">
+                                    {/* <NavItem  className="grid-item" id="grid-item7">
                                         <NavLink href="https://github.com/KhamasEes"> GitHåb 7</NavLink>
                                     </NavItem>
 
@@ -271,8 +278,8 @@ class AppNavbar extends Component {
 
                                     <NavItem  className="grid-item" id="grid-item58">
                                         <NavLink href="https://github.com/KhamasEes"> GitHäb 58</NavLink>
-                                    </NavItem>                    
-                                </Nav>
+                                </NavItem> */}                    
+                                </Nav> 
                              
                             </Nav>
                         </Collapse>

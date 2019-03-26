@@ -4,14 +4,13 @@ dotenv.config();
 
 const express = require ('express');
 const mongoose = require ('mongoose');
-const bodyParser = require ('body-parser');
+// const bodyParser = require ('body-parser');
 
-const itemsServer = require('./routes/api/items'); // Tätä käytetään alareunassa api.use()- kohdassa
-const personServer = require('./routes/api/persons');
+// const itemsServer = require('./routes/api/items'); // Tätä käytetään alareunassa api.use()- kohdassa
+// const personServer = require('./routes/api/persons');
 const path = require('path');
 
-
-
+const config = require('config');
 
 
 
@@ -19,7 +18,7 @@ const app = express();
 
 // Bodyparser Middleware
 
-app.use(bodyParser.json());
+app.use(express.json());
 
 // DB Config
 
@@ -27,13 +26,19 @@ const db = require('./config/keys').mongoURI;
 
 // Connect to Mongo
 
-mongoose.connect(db, { useNewUrlParser: true }) // Jälkimmäinen poistaa virheen/varoituksen
+mongoose.connect(db, { 
+    useNewUrlParser: true,
+    useCreateIndex: true
+
+}) // Jälkimmäinen poistaa virheen/varoituksen
     .then(() => console.log('MongoDB Connected..'))
     .catch(err => console.log(err));
 
 // User Routes
-app.use('/api/items', itemsServer);
-app.use('/api/persons', personServer);
+app.use('/api/items', require('./routes/api/items'));
+app.use('/api/persons', require('./routes/api/persons'));
+app.use('/api/users', require('./routes/api/users'));
+app.use('/api/auth', require('./routes/api/auth'));
 
 //Serve static assets if in production
 
