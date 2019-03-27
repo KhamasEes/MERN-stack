@@ -13,6 +13,12 @@ import { getEsineet, deleteEsine, addEsine } from '../../actions/esineActions';
         this.props.getEsineet();
     }
     
+    static propTypes = {
+        getEsineet: PropTypes.func.isRequired,
+        listaesine: PropTypes.object.isRequired,
+        isAuthenticated: PropTypes.bool
+    }
+
     onDeleteClick = (id) => {
         this.props.deleteEsine(id);
     };
@@ -30,14 +36,16 @@ import { getEsineet, deleteEsine, addEsine } from '../../actions/esineActions';
                         { listanEsineet.map(({ _id, esineenNimi }) => (
                             <CSSTransition key={_id} timeout={500} classNames="fade">
                                 <ListGroupItem className="esine">
-                                    <Button
-                                        className="remove-btn"
-                                        color="danger"
-                                        size="sm"
-                                        style={{ marginRight: '0.5rem' }}
-                                        onClick={this.onDeleteClick.bind(this, _id)}
-                                    >&times; 
-                                    </Button>
+                                    { this.props.isAuthenticated &&
+                                        <Button
+                                            className="remove-btn"
+                                            color="danger"
+                                            size="sm"
+                                            style={{ marginRight: '0.5rem' }}
+                                            onClick={this.onDeleteClick.bind(this, _id)}
+                                        >&times; 
+                                        </Button>
+                                    }
                                     { esineenNimi }
                                 </ListGroupItem>
                             </CSSTransition>
@@ -49,13 +57,11 @@ import { getEsineet, deleteEsine, addEsine } from '../../actions/esineActions';
   }
 }
 
-ShoppingList.propTypes = {
-    getEsineet: PropTypes.func.isRequired,
-    listaesine: PropTypes.object.isRequired
-}
+
 
 const mapStateToProps = (state) => ({
-    listaesine: state.listaesine
+    listaesine: state.listaesine,
+    isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(mapStateToProps, { getEsineet, deleteEsine, addEsine })(ShoppingList);

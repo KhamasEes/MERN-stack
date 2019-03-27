@@ -12,13 +12,19 @@ import {
 
 import { connect } from 'react-redux';
 import { addEsine } from '../../actions/esineActions';
+import PropTypes from 'prop-types';
+
 
 
 class EsineModal extends Component {
     state = {
         modal: false,
         esineenNimi: ''
-    }
+    };
+
+    static propTypes = {
+        isAuthenticated: PropTypes.bool
+    };
 
     toggle = () => {
         this.setState({
@@ -47,11 +53,16 @@ class EsineModal extends Component {
     render() {
         return (
             <div>
+
+
+                { this.props.isAuthenticated ?
                 <Button
                     color="dark"
                     style={{ marginBottom: '2rem', marginTop: '1rem' }}
                     onClick={ this.toggle }
                 >Add Item</Button>
+                : <h4 className="mb-3 ml-4"> Please log in to manage items </h4>
+                }
             
                 <Modal
                     isOpen = { this.state.modal }
@@ -88,7 +99,8 @@ class EsineModal extends Component {
 }
 
 const mapsStateToProps = state => ({
-    item: state.item
+    item: state.item,
+    isAuthenticated: state.auth.isAuthenticated
 });
 
 

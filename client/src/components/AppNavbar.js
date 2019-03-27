@@ -10,7 +10,10 @@ import {
     Container
 } from 'reactstrap'; // from Reactstrapistä listää https://reactstrap.github.io/components/alerts/
 import RegisterModal from './auth/RegisterModal';
+import LoginModal from './auth/LoginModal';
 import Logout from './auth/Logout';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 
 class AppNavbar extends Component {
@@ -18,6 +21,10 @@ class AppNavbar extends Component {
         
     state = {
         isOpen: false
+    }
+
+    static propTypes = {
+        auth: PropTypes.object.isRequired
     }
 
     // Ei tartte bindia kuun tekee = () => {}
@@ -29,6 +36,33 @@ class AppNavbar extends Component {
     }
 
     render() {
+
+        const { isAuthenticated, user } = this.props.auth
+
+        const authLinks = (
+            <>
+                <NavItem className="grid-item" id="grid-item7" >
+                    <span className="navbar-text" mr-3>
+                        <strong> { user && `Welcome ${user.userName}` } </strong>
+                    </span>
+                </NavItem>
+                <NavItem className="grid-item" id="grid-item5" >
+                    <Logout />
+                </NavItem>
+            </>
+        );
+    
+        const guestLinks = (
+            <>
+                <NavItem  className="grid-item" id="grid-item4">
+                    <RegisterModal />
+                </NavItem>
+
+                <NavItem  className="grid-item" id="grid-item6">
+                    <LoginModal />
+                </NavItem>
+            </>
+        );
 
         return(
             <div>
@@ -45,11 +79,11 @@ class AppNavbar extends Component {
                                 </NavItem>
 
                                 <NavItem className="grid-left" id="grid-item2">
-                                    <NavLink href="https://github.com/KhamasEes" > GitHeb 2</NavLink>
+                                    <NavLink href="https://github.com/KhamasEes" > Vasen</NavLink>
                                 </NavItem>
 
                                 <NavItem className="grid-right" id="grid-item3">
-                                    <NavLink href="https://github.com/KhamasEes" > GitHib 3</NavLink>
+                                    <NavLink href="https://github.com/KhamasEes" > Oikea</NavLink>
                                 </NavItem>
 
                                 <NavItem  className="grid-bottom" id="grid-item9">
@@ -60,13 +94,10 @@ class AppNavbar extends Component {
                                             
                                 <Nav className="grid-container ml-auto" navbar>
 
-                                    <NavItem  className="grid-item" id="grid-item4">
-                                        <RegisterModal />
-                                    </NavItem>
 
-                                    <NavItem className="grid-item" id="grid-item5" >
-                                        <Logout />
-                                    </NavItem>
+                                    { isAuthenticated ? authLinks : guestLinks }
+
+
 {/* 
                                     <NavItem className="grid-item" id="grid-item5">
                                         <NavLink href="https://github.com/KhamasEes" > GitHub 5</NavLink>
@@ -76,7 +107,7 @@ class AppNavbar extends Component {
                                         <NavLink href="https://github.com/KhamasEes" > GitHyb 6</NavLink>
                                     </NavItem> */}
 
-                                    {/* <NavItem  className="grid-item" id="grid-item7">
+                                    <NavItem  className="grid-item" id="grid-item7">
                                         <NavLink href="https://github.com/KhamasEes"> GitHåb 7</NavLink>
                                     </NavItem>
 
@@ -92,7 +123,7 @@ class AppNavbar extends Component {
                                         <NavLink href="https://github.com/KhamasEes"> GitHäb 11</NavLink>
                                     </NavItem>
 
-                                    <NavItem  className="grid-item" id="grid-item12">
+                                    {/*<NavItem  className="grid-item" id="grid-item12">
                                         <NavLink href="https://github.com/KhamasEes"> GitHäb 12</NavLink>
                                     </NavItem>
 
@@ -291,4 +322,8 @@ class AppNavbar extends Component {
 
 }
 
-export default AppNavbar;
+const mapStateToProps = state => ({
+    auth: state.auth
+});
+
+export default connect(mapStateToProps, null)(AppNavbar);
